@@ -4,9 +4,9 @@ import keras.backend as K
 from keras import Input
 from keras.layers import Conv2D, Conv2DTranspose, MaxPool2D, ZeroPadding2D, BatchNormalization
 
-from embedding.common import GenericAutoEncoder, EmbeddingGetter
-from embedding.utils import need_sequence
-from handle_datasets import all_datasets, paper_dataset
+from .common import GenericAutoEncoder, EmbeddingGetter
+from .utils import need_sequence
+from ..handle_datasets import all_datasets, paper_dataset
 
 pjoin = os.path.join
 
@@ -45,7 +45,8 @@ def model_fn(input_shape, force=False):
     x = Conv2DTranspose(512, 2, strides=2, padding='same')(x)
     x = BatchNormalization()(x)
     x = Conv2D(input_shape[-1], 1, padding='same')(x)
-    if K.int_shape(x)[1:] != input_shape[1:] and not force:
+    #if K.int_shape(x)[1:] != input_shape[1:] and not force:
+    if x.shape[1:] != input_shape[1:] and not force:
         x = ZeroPadding2D(2)(x)
     return inp, embd, x
 

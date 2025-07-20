@@ -1,6 +1,6 @@
-from config import read_ds, log
-from embedding import embeddings_dict, TSNEEmbedding
-from handle_datasets import randomize, make_small
+from .config import read_ds, log
+from .embedding import embeddings_dict, TSNEEmbedding
+from .handle_datasets import randomize, make_small
 import numpy as np
 
 

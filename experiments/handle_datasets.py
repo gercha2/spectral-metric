@@ -4,8 +4,9 @@ from glob import glob as gl
 
 import cv2
 import numpy as np
-from keras.datasets import mnist, cifar10, cifar100
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.datasets import mnist, cifar10, cifar100
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from scipy.io import loadmat
 
 glob = lambda k: sorted(gl(k))
@@ -13,7 +14,7 @@ pjoin = os.path.join
 
 if 'DATASET_ROOT' not in os.environ:
     warnings.warn("$DATASET_ROOT is not set, defaulting to author's path.")
-    os.environ['DATASET_ROOT'] = '/media/braf3002/hdd2'
+    os.environ['DATASET_ROOT'] = 'D:/spectral-metric/Datasets'
 
 DATASET_ROOT = os.environ['DATASET_ROOT']
 assert os.path.exists(DATASET_ROOT), '$DATASET_ROOT is not a valid path!'
@@ -229,17 +230,18 @@ def randomize(X_train, y_train, random_cls):
 # All of the possible datasets
 all_datasets = {'mnist': lambda: mnist.load_data(),
                 'cifar10': lambda: cifar10.load_data(),
-                'cifar10aug': lambda: augment(make_small(cifar10.load_data(), 1500, seed=1337), 10 * 2000),
-                'cifar100': lambda: cifar100.load_data(),
-                'cifar_deer_dog': lambda: read_cifar10_deer_dog(),
-                'china': lambda: read_china_set(CHINA),
-                'notMNIST': lambda: read_notMnist(notMNIST),
-                'svhn': lambda: read_SVHN(SVHN),
-                'stl10': lambda: read_STL10(STL10),
-                'inria': lambda: read_inria(INRIA),
-                'seefood': lambda: read_seefood(SEEFOOD),
-                'compcars': lambda: read_compcars(COMP_CARS),
-                'miotcd': lambda: read_miotcd(MIOTCD)}
+                #'cifar10aug': lambda: augment(make_small(cifar10.load_data(), 1500, seed=1337), 10 * 2000),
+                #'cifar100': lambda: cifar100.load_data(),
+                #'cifar_deer_dog': lambda: read_cifar10_deer_dog(),
+                #'china': lambda: read_china_set(CHINA),
+                #'notMNIST': lambda: read_notMnist(notMNIST),
+                #'svhn': lambda: read_SVHN(SVHN),
+                #'stl10': lambda: read_STL10(STL10),
+                #'inria': lambda: read_inria(INRIA),
+                #'seefood': lambda: read_seefood(SEEFOOD),
+                #'compcars': lambda: read_compcars(COMP_CARS),
+                #'miotcd': lambda: read_miotcd(MIOTCD)
+                }
 
 all_datasets.update({'cifar10_small{}'.format(k): lambda: cifar10.load_data() for k in [500, 1000, 2500, 5000, 6000]})
 all_datasets.update({'mnist_small{}'.format(k): lambda: mnist.load_data() for k in [500, 1000, 2500, 5000]})

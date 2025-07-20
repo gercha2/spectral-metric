@@ -8,10 +8,10 @@ from matplotlib import pyplot as plt
 from matplotlib.font_manager import FontProperties
 from sklearn.preprocessing import quantile_transform
 
-from handle_datasets import mio_tcd_clss
+from .handle_datasets import mio_tcd_clss
 from spectral_metric.estimator import CumulativeGradientEstimator
 from spectral_metric.lib import get_cummax
-from utils import fetch_dataset
+from .utils import fetch_dataset
 from spectral_metric.visualize import make_graph
 
 log = logging.getLogger()

@@ -1,8 +1,8 @@
-numpy
-seaborn
+numpy==1.23.5
+seaborn==0.11.2
 joblib
 spectral_metric
-matplotlib
+matplotlib==3.5.3
 scikit-learn
 keras
 opencv-python

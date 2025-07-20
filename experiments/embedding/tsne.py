@@ -1,8 +1,8 @@
-# from sklearn.manifold import TSNE
-from MulticoreTSNE import MulticoreTSNE as TSNE
+from sklearn.manifold import TSNE
+#from MulticoreTSNE import MulticoreTSNE as TSNE
 
-from embedding.common import EmbeddingGetter
-from experiments.handle_datasets import all_datasets, paper_dataset
+from .common import EmbeddingGetter
+from ..handle_datasets import all_datasets, paper_dataset
 
 
 def tsne_inner(x_train):

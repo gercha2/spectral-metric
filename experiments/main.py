@@ -2,8 +2,8 @@ import argparse
 
 from tqdm import tqdm
 
-from config import EMBEDDINGS, make_config
-from visualize import test_job, plot_with_err, visualize
+from .config import EMBEDDINGS, make_config
+from .visualize import test_job, plot_with_err, visualize
 
 
 def parse_arg():

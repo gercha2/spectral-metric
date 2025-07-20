@@ -6,11 +6,12 @@ import numpy as np
 import tensorflow as tf
 from keras.applications import VGG19
 from keras.applications.imagenet_utils import preprocess_input
-from keras.engine import Model
+#from keras.engine import Model
+from keras.models import Model
 from keras.layers import Input, Lambda
 
-from config import read_ds
-from embedding.common import EmbeddingGetter
+from ..config import read_ds
+from .common import EmbeddingGetter
 
 pjoin = os.path.join
 

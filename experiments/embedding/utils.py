@@ -56,6 +56,7 @@ def resize_all(x_train, x_test=None, size=64):
 
     return np.array(x_train, np.float32), x_test
 
-
 def need_sequence(dat):
-    return np.issubdtype(dat.dtype, np.string_) or np.issubdtype(dat.dtype, np.unicode_)
+    return np.issubdtype(dat.dtype, np.bytes_) or np.issubdtype(dat.dtype, np.str_)
+
+
