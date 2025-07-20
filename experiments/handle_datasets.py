@@ -14,7 +14,7 @@ pjoin = os.path.join
 
 if 'DATASET_ROOT' not in os.environ:
     warnings.warn("$DATASET_ROOT is not set, defaulting to author's path.")
-    os.environ['DATASET_ROOT'] = 'D:/spectral-metric/Datasets'
+    os.environ['DATASET_ROOT'] = 'D:/spectral-metric/Datasets' #Here your datasets path
 
 DATASET_ROOT = os.environ['DATASET_ROOT']
 assert os.path.exists(DATASET_ROOT), '$DATASET_ROOT is not a valid path!'
